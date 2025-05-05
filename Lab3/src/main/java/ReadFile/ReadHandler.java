@@ -8,7 +8,7 @@ public interface ReadHandler {
 
     public void setNext(ReadHandler rh);
     
-    public boolean canHandle(String filePath);
+    public ReadHandler getNext();
     
-    public ArrayList<Monster> handle(String filePath) throws FileNotFoundException;
+    public ArrayList<Monster> process(String filePath) throws FileNotFoundException;
 }

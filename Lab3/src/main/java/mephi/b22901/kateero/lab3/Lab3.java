@@ -1,6 +1,8 @@
 package mephi.b22901.kateero.lab3;
 
 import Entities.Monster;
+import GUI.ChoseFile;
+import GUI.GalaFrame;
 import ReadFile.JSONReadHandler;
 import ReadFile.XMLReadHandler;
 import ReadFile.YAMLReadHandler;
@@ -13,20 +15,26 @@ public class Lab3 {
 //        XMLReadHandler rh = new XMLReadHandler();
 //        try {
 //        ArrayList<Monster> monsters = rh.handle("C:\\Users\\Катя\\OneDrive\\Рабочий стол\\Monsters.xml");
-//        System.out.println(monsters);
+//      
+//        for (int i = 0; i < 10; i++) {
+//            System.out.println(monsters.get(i).getFirstMention());
+//        }
 //        } catch (FileNotFoundException ex){
 //            System.err.println("Can't read file!");
 //        }
 //        JSONReadHandler jrh = new JSONReadHandler();
 //        ArrayList<Monster> m = jrh.handle("C:\\Users\\Катя\\OneDrive\\Рабочий стол\\Monsters.json");
 //        for (int i = 0; i < 10; i++) {
-//            System.out.println(m.get(i).getName());
+//            System.out.println(m.get(i).getFirstMention());
 //        }
 //        YAMLReadHandler yrh = new YAMLReadHandler();
 //        ArrayList<Monster> m = yrh.handle("C:\\Users\\Катя\\OneDrive\\Рабочий стол\\Monsters.yml");
 //        for (int i = 0; i < 10; i++) {
-//            System.out.println(m.get(i).getName());
+//            System.out.println(m.get(i).getFirstMention());
 //        }
 //    }
-}
+        ChoseFile gf = new ChoseFile();
+        gf.setLocationRelativeTo(null);
+        gf.setVisible(true);
+    }
 }

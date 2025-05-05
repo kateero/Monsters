@@ -5,6 +5,7 @@ import Entities.Monster;
 import Entities.Poison;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
@@ -12,14 +13,12 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
 public class XMLReadHandler extends BaseReadHandler {
-    
-    @Override
-    public boolean canHandle(String filePath){
+
+    private boolean canHandle(String filePath) {
         return filePath.endsWith(".xml");
     }
-    
-    @Override
-    public ArrayList<Monster> handle(String filePath) throws FileNotFoundException {
+
+    private ArrayList<Monster> handle(String filePath) throws FileNotFoundException {
 
         ArrayList<Monster> monsters = null;
         try {
@@ -59,7 +58,7 @@ public class XMLReadHandler extends BaseReadHandler {
                         if (value.isEmpty()) {
                             break;
                         }
-                        
+
                         switch (fieldName) {
 
                             case "name" ->
@@ -71,7 +70,7 @@ public class XMLReadHandler extends BaseReadHandler {
                             case "habitat" ->
                                 currentMonster.addHabitat(value);
                             case "firstMention" ->
-                                currentMonster.setFirstMention(value);
+                                currentMonster.setFirstMention(LocalDate.parse(value));
                             case "height" ->
                                 currentMonster.setHeight(Integer.parseInt(value));
                             case "weight" ->
@@ -112,6 +111,17 @@ public class XMLReadHandler extends BaseReadHandler {
             System.out.println("Ошибка чтения файла xml");
         }
         return monsters;
+    }
+
+    @Override
+    public ArrayList<Monster> process(String filePath) throws FileNotFoundException {
+        if (canHandle(filePath)) {
+            return handle(filePath);
+        } else if (getNext() != null) {
+            return getNext().process(filePath);
+        } else {
+            return null;
+        }
     }
 
 }

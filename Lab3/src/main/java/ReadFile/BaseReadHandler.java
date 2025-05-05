@@ -8,4 +8,9 @@ public abstract class BaseReadHandler implements ReadHandler {
     public void setNext(ReadHandler rh) {
         this.next = rh;
     }
+    
+    @Override
+    public ReadHandler getNext() {
+        return next;
+    }
 }

@@ -11,7 +11,7 @@ public class Monster {
     private String description;
     private int danger;
     private ArrayList<String> habitat = new ArrayList<String>();
-    private String firstMention;
+    private LocalDate firstMention;
     private int height;
     private int weight;
     private String activityTime;
@@ -46,7 +46,7 @@ public class Monster {
         return immunity;
     }
 
-    public String getFirstMention() {
+    public LocalDate getFirstMention() {
         return firstMention;
     }
 
@@ -94,7 +94,7 @@ public class Monster {
         this.habitat.add(habitat);
     }
 
-    public void setFirstMention(String firstMention) {
+    public void setFirstMention(LocalDate firstMention) {
         this.firstMention = firstMention;
     }
 

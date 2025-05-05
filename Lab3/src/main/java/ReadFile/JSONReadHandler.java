@@ -9,15 +9,13 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class JSONReadHandler extends BaseReadHandler {
-    
-    @Override
-    public boolean canHandle(String filePath){
+
+    private boolean canHandle(String filePath) {
         return filePath.endsWith(".json");
     }
 
-    @Override
-    public ArrayList<Monster> handle(String filePath) throws FileNotFoundException {
-        ObjectMapper mapper = new ObjectMapper().registerModule(new JavaTimeModule());;
+    private ArrayList<Monster> handle(String filePath) throws FileNotFoundException {
+        ObjectMapper mapper = new ObjectMapper().registerModule(new JavaTimeModule());
         ArrayList<Monster> monsters = new ArrayList<Monster>();
 
         try {
@@ -34,5 +32,16 @@ public class JSONReadHandler extends BaseReadHandler {
         }
         return monsters;
 
+    }
+
+    @Override
+    public ArrayList<Monster> process(String filePath) throws FileNotFoundException {
+        if (canHandle(filePath)) {
+            return handle(filePath);
+        } else if (getNext() != null) {
+            return getNext().process(filePath);
+        } else {
+            return null;
+        }
     }
 }
