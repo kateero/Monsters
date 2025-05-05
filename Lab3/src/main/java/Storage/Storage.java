@@ -4,7 +4,7 @@ import Entities.Monster;
 import java.util.ArrayList;
 
 public class Storage {
-    private ArrayList<Monster> monsters;
+    private ArrayList<Monster> monsters = null;
 
     public ArrayList<Monster> getMonsters() {
         return monsters;

@@ -1,5 +1,6 @@
 package mephi.b22901.kateero.lab3;
 
+import Controller.ReadFile;
 import Entities.Monster;
 import GUI.ChoseFile;
 import GUI.GalaFrame;
@@ -33,7 +34,8 @@ public class Lab3 {
 //            System.out.println(m.get(i).getFirstMention());
 //        }
 //    }
-        ChoseFile gf = new ChoseFile();
+        ReadFile readFile = new ReadFile();
+        GalaFrame gf = new GalaFrame(readFile);
         gf.setLocationRelativeTo(null);
         gf.setVisible(true);
     }

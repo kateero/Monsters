@@ -4,7 +4,7 @@
   habitat:
     - "чащи Брокилона"
     - "чащи Эдингеля"
-  firstMention: "1234-06-21"
+  firstMention: 1234-06-21
   height: 3
   weight: 300
   activityTime: "ночь"
@@ -29,7 +29,7 @@
   habitat:
     - "поля Редании"
     - "амбары Туссента"
-  firstMention: "1198-07-15"
+  firstMention: 1198-07-15
   height: 2
   weight: 0
   activityTime: "день"
@@ -46,13 +46,12 @@
         quantity: 1
     cookingTime: 30
     efficiency: "высокая"
-
 - name: "Катакан"
   description: "крылатый демон с хвостом скорпиона"
   danger: 9
   habitat:
     - "горные пещеры Туссента"
-  firstMention: "1150-04-12"
+  firstMention: 1150-04-12
   height: 2
   weight: 200
   activityTime: "сумерки"
@@ -76,7 +75,7 @@
   danger: 6
   habitat:
     - "топи Вендена"
-  firstMention: "1221-09-03"
+  firstMention: 1221-09-03
   height: 1
   weight: 15
   activityTime: "ночь"
@@ -99,9 +98,9 @@
   danger: 10
   habitat:
     - "ледники Ковира"
-  firstMention: "1105-12-01"
+  firstMention: 1105-12-01
   height: 5
-  weight: .inf
+  weight: 1000000
   activityTime: "всегда"
   immunity:
     - "заморозка"
@@ -124,7 +123,7 @@
   habitat:
     - "кладбища города"
     - "леса и пещеры Гравити Фолз"
-  firstMention: "1995-06-20"
+  firstMention: 1995-06-20
   height: 2
   weight: 60
   activityTime: "ночь"
@@ -152,7 +151,7 @@
   danger: 8
   habitat:
     - "лес Гравити Фолз"
-  firstMention: "1990-10-15"
+  firstMention: 1990-10-15
   height: 3
   weight: 150
   activityTime: "день"
@@ -175,7 +174,7 @@
   danger: 5
   habitat:
     - "помойки Гравити Фолз"
-  firstMention: "1990-08-10"
+  firstMention: 1990-08-10
   height: 3
   weight: 40
   activityTime: "вечер"
@@ -199,7 +198,7 @@
   danger: 7
   habitat:
     - "кладовка Хижины Чудес"
-  firstMention: "2000-11-05"
+  firstMention: 2000-11-05
   height: 2
   weight: 20
   activityTime: "полночь"
@@ -223,7 +222,7 @@
   danger: 10
   habitat:
     - "измерение Кошмаров"
-  firstMention: "0001-01-01"
+  firstMention: 0001-01-01
   height: 1
   weight: 0
   activityTime: "всегда"
@@ -241,3 +240,4 @@
         quantity: 1
     cookingTime: 100
     efficiency: "средняя"
+

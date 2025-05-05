@@ -125,5 +125,10 @@ public class Monster {
     public void setVulnerability(String vulnerability) {
         this.vulnerability = vulnerability;
     }
+    
+    @Override
+    public String toString(){
+        return name;
+    }
 
 }

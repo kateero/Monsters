@@ -3,8 +3,11 @@ package ReadFile;
 import Entities.Ingredient;
 import Entities.Monster;
 import Entities.Poison;
+import com.fasterxml.jackson.core.exc.StreamReadException;
+import com.fasterxml.jackson.databind.DatabindException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import javax.xml.stream.XMLInputFactory;
@@ -17,7 +20,7 @@ public class XMLReadHandler extends BaseReadHandler {
     private boolean canHandle(String filePath) {
         return filePath.endsWith(".xml");
     }
-
+    
     private ArrayList<Monster> handle(String filePath) throws FileNotFoundException {
 
         ArrayList<Monster> monsters = null;
@@ -108,13 +111,13 @@ public class XMLReadHandler extends BaseReadHandler {
                 }
             }
         } catch (XMLStreamException ex) {
-            System.out.println("Ошибка чтения файла xml");
+            System.err.println("Ошибка чтения файла xml");
         }
         return monsters;
     }
 
     @Override
-    public ArrayList<Monster> process(String filePath) throws FileNotFoundException {
+    public ArrayList<Monster> process(String filePath) throws FileNotFoundException, IOException {
         if (canHandle(filePath)) {
             return handle(filePath);
         } else if (getNext() != null) {

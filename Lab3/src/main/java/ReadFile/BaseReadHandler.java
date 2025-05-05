@@ -1,16 +1,22 @@
 package ReadFile;
 
-public abstract class BaseReadHandler implements ReadHandler {
-    
-    private ReadHandler next;
+import Entities.Monster;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
 
-    @Override
-    public void setNext(ReadHandler rh) {
+public abstract class BaseReadHandler {
+
+    private BaseReadHandler next;
+
+    public void setNext(BaseReadHandler rh) {
         this.next = rh;
     }
-    
-    @Override
-    public ReadHandler getNext() {
+
+    public BaseReadHandler getNext() {
         return next;
     }
+
+    public abstract ArrayList<Monster> process(String filePath) throws FileNotFoundException, IOException;
+
 }
