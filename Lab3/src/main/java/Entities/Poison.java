@@ -1,13 +1,15 @@
 package Entities;
 
-import java.util.List;
+import java.util.ArrayList;
  
 public class Poison {
-    private List<Ingredient> recipe;
+    private ArrayList<Ingredient> recipe = new ArrayList<Ingredient>();
     private int cookingTime;
     private String efficiency;
+    
+    public Poison(){}
 
-    public List<Ingredient> getRecipe() {
+    public ArrayList<Ingredient> getRecipe() {
         return recipe;
     }
 
@@ -19,8 +21,8 @@ public class Poison {
         return efficiency;
     }
 
-    public void setRecipe(List<Ingredient> recipe) {
-        this.recipe = recipe;
+    public void setIngredient(Ingredient ingredient) {
+        this.recipe.add(ingredient);
     }
 
     public void setCookingTime(int cookingTime) {

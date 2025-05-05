@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monsters>
+    <monster>
+        <name>Леший</name>
+        <description>Гибрид человека и лесного духа, охраняющий древние рощи</description>
+        <danger>7</danger>
+        <habitat>чащи Брокилона</habitat>
+        <habitat>чащи Эдингеля</habitat>
+        <firstMention>1234-06-21</firstMention>
+        <height>3</height>
+        <weight>300</weight>
+        <activityTime>ночь</activityTime>
+        <immunity>оглушение</immunity>
+        <immunity>яды</immunity>
+        <vulnerability>магия</vulnerability>
+        <poison>
+             <recipe>
+                <ingredient>
+                    <nameIngredient>корень мандрагоры</nameIngredient>
+                    <quantity>3</quantity>
+                </ingredient>
+                <ingredient>
+                    <nameIngredient>пепел драконида</nameIngredient>
+                    <quantity>1</quantity>
+                </ingredient>
+                <ingredient>
+                    <nameIngredient>эссенция полыни</nameIngredient>
+                    <quantity>1</quantity>
+                </ingredient>
+            </recipe>
+            <cookingTime>60</cookingTime>
+            <efficiency>умеренная</efficiency>
+        </poison>
+    </monster>
+    <monster>
+        <name>Полуденница</name>
+        <description>призрак, терроризирующий поля во время жатвы</description>
+        <danger>5</danger>
+        <habitat>поля Редании</habitat>
+        <habitat>амбары Туссента</habitat>
+        <firstMention>1198-07-15</firstMention>
+        <height>2</height>
+        <weight>0</weight>
+        <activityTime>день</activityTime>
+        <immunity>кровотечение</immunity>
+        <vulnerability>световая магия</vulnerability>
+        <poison>
+            <recipe>
+                <ingredient>
+                    <nameIngredient>лепестки лунного цветка</nameIngredient>
+                    <quantity>2</quantity>
+                </ingredient>
+                <ingredient>
+                    <nameIngredient>серебряная нить</nameIngredient>
+                    <quantity>1</quantity>
+                </ingredient>
+                <ingredient>
+                    <nameIngredient>экстракт чеснока</nameIngredient>
+                    <quantity>1</quantity>
+                </ingredient>
+            </recipe>
+            <cookingTime>30</cookingTime>
+            <efficiency>высокая</efficiency>
+        </poison>
+    </monster>
+    <monster>
+        <name>Катакан</name>
+        <description>крылатый демон с хвостом скорпиона</description>
+        <danger>9</danger>
+        <habitat>горные пещеры Туссента</habitat>
+        <firstMention>1150-04-12</firstMention>
+        <height>2</height>
+        <weight>200</weight>
+        <activityTime>сумерки</activityTime>
+        <immunity>огонь</immunity>
+        <immunity>яды</immunity>
+        <vulnerability>магия</vulnerability>
+        <poison>
+            <recipe>
+                <ingredient>
+                    <nameIngredient>жало мантикоры</nameIngredient>
+                    <quantity>4</quantity>
+                </ingredient>
+                <ingredient>
+                    <nameIngredient>нефритовая пыль</nameIngredient>
+                    <quantity>2</quantity>
+                </ingredient>
+                <ingredient>
+                    <nameIngredient>спирт Альберихта</nameIngredient>
+                    <quantity>1</quantity>
+                </ingredient>
+            </recipe>
+            <cookingTime>90</cookingTime>
+            <efficiency>критическая</efficiency>
+        </poison>
+    </monster>
+    <monster>
+        <name>Кикимора</name>
+        <description>болотная нежить из гниющих останков</description>
+        <danger>6</danger>
+        <habitat>топи Вендена</habitat>
+        <firstMention>1221-09-03</firstMention>
+        <height>1</height>
+        <weight>15</weight>
+        <activityTime>ночь</activityTime>
+        <immunity>удушье</immunity>
+        <vulnerability>земляная магия</vulnerability>
+        <poison>
+            <recipe>
+                <ingredient>
+                    <nameIngredient>грибы-поганки</nameIngredient>
+                    <quantity>5</quantity>
+                </ingredient>
+                <ingredient>
+                    <nameIngredient>глаз василиска</nameIngredient>
+                    <quantity>1</quantity>
+                </ingredient>
+                <ingredient>
+                    <nameIngredient>роса папоротника</nameIngredient>
+                    <quantity>3</quantity>
+                </ingredient>
+            </recipe>
+            <cookingTime>45</cookingTime>
+            <efficiency>средняя</efficiency>
+        </poison>
+    </monster>
+    <monster>
+        <name>Элементаль льда</name>
+        <description>дух вечной зимы</description>
+        <danger>10</danger>
+        <habitat>ледники Ковира</habitat>
+        <firstMention>1105-12-01</firstMention>
+        <height>5</height>
+        <activityTime>всегда</activityTime>
+        <immunity>заморозка</immunity>
+        <immunity>дробление</immunity>
+        <vulnerability>огненная магия</vulnerability>
+        <poison>
+            <recipe>
+                <ingredient>
+                    <nameIngredient>сердце огненного элементаля</nameIngredient>
+                    <quantity>1</quantity>
+                </ingredient>
+                <ingredient>
+                    <nameIngredient>сера</nameIngredient>
+                    <quantity>3</quantity>
+                </ingredient>
+                <ingredient>
+                    <nameIngredient>расплавленное железо</nameIngredient>
+                    <quantity>1</quantity>
+                </ingredient>
+            </recipe>
+            <cookingTime>120</cookingTime>
+            <efficiency>переменная</efficiency>
+        </poison>
+    </monster>
+    <monster>
+        <name>Зомби</name>
+        <description>обычно они грубые, у них грубая кожа и их часто путают с подростками</description>
+        <danger>10</danger>
+        <habitat>кладбища города</habitat>
+        <habitat>леса и пещеры Гравити Фолз</habitat>
+        <firstMention>1995-06-20</firstMention>
+        <height>2</height>
+        <weight>60</weight>
+        <activityTime>ночь</activityTime>
+        <immunity>заморозка</immunity>
+        <immunity>дробление</immunity>
+        <vulnerability>генерирование идеального трезвучия</vulnerability>
+        <poison>
+            <recipe>
+                <ingredient>
+                    <nameIngredient>кровь саламандры</nameIngredient>
+                    <quantity>1</quantity>
+                </ingredient>
+                <ingredient>
+                    <nameIngredient>растворитель</nameIngredient>
+                    <quantity>2</quantity>
+                </ingredient>
+                <ingredient>
+                    <nameIngredient>формальдегид</nameIngredient>
+                    <quantity>1</quantity>
+                </ingredient>
+                <ingredient>
+                    <nameIngredient>соль</nameIngredient>
+                    <quantity>1</quantity>
+                </ingredient>
+                <ingredient>
+                    <nameIngredient>корица (для вкуса)</nameIngredient>
+                    <quantity>1</quantity>
+                </ingredient>
+            </recipe>
+            <cookingTime>10</cookingTime>
+            <efficiency>переменная</efficiency>
+        </poison>
+    </monster>
+    <monster>
+        <name>Гремоблин</name>
+        <description>наполовину гремлин, наполовину гоблин</description>
+        <danger>8</danger>
+        <habitat>лес Гравити Фолз</habitat>
+        <firstMention>1990-10-15</firstMention>
+        <height>3</height>
+        <weight>150</weight>
+        <activityTime>день</activityTime>
+        <immunity>вода</immunity>
+        <vulnerability>дать посмотреть в зеркало</vulnerability>
+        <poison>
+            <recipe>
+                <ingredient>
+                    <nameIngredient>пыльца лунного цветка</nameIngredient>
+                    <quantity>1</quantity>
+                </ingredient>
+                <ingredient>
+                    <nameIngredient>порошок кристалла из пещеры чудес</nameIngredient>
+                    <quantity>2</quantity>
+                </ingredient>
+                <ingredient>
+                    <nameIngredient>жвачка из уха гнома</nameIngredient>
+                    <quantity>3</quantity>
+                </ingredient>
+            </recipe>
+            <cookingTime>10</cookingTime>
+            <efficiency>высокая</efficiency>
+        </poison>
+    </monster>
+    <monster>
+        <name>Летоунский Ловкач</name>
+        <description>таинственное существо, состоящее из невкусных конфет, которые дети выкидывают на помойку во время праздника</description>
+        <danger>5</danger>
+        <habitat>помойки Гравити Фолз</habitat>
+        <firstMention>1990-08-10</firstMention>
+        <height>3</height>
+        <weight>40</weight>
+        <activityTime>вечер</activityTime>
+        <immunity>огонь</immunity>
+        <immunity>дробление</immunity>
+        <vulnerability>состоит из конфет, его можно съесть, если вы такие любите</vulnerability>
+        <poison>
+            <recipe>
+                <ingredient>
+                    <nameIngredient>чай</nameIngredient>
+                    <quantity>10</quantity>
+                </ingredient>
+                <ingredient>
+                    <nameIngredient>кофе</nameIngredient>
+                    <quantity>10</quantity>
+                </ingredient>
+                <ingredient>
+                    <nameIngredient>какао</nameIngredient>
+                    <quantity>10</quantity>
+                </ingredient>
+            </recipe>
+            <cookingTime>15</cookingTime>
+            <efficiency>критическая</efficiency>
+        </poison>
+    </monster>
+    <monster>
+        <name>Восковые фигуры</name>
+        <description>проклятые существа из воска, созданные в образах знаменитых людей</description>
+        <danger>7</danger>
+        <habitat>кладовка Хижины Чудес</habitat>
+        <firstMention>2000-11-05</firstMention>
+        <height>2</height>
+        <weight>20</weight>
+        <activityTime>полночь</activityTime>
+        <immunity>огонь</immunity>
+        <immunity>дробление</immunity>
+        <vulnerability>огонь, горячие предметы</vulnerability>
+        <poison>
+           <recipe>
+                <ingredient>
+                    <nameIngredient>жидкий огонь</nameIngredient>
+                    <quantity>3</quantity>
+                </ingredient>
+                <ingredient>
+                    <nameIngredient>рассветный перец</nameIngredient>
+                    <quantity>5</quantity>
+                </ingredient>
+                <ingredient>
+                    <nameIngredient>грибы плесени</nameIngredient>
+                    <quantity>1</quantity>
+                </ingredient>
+            </recipe>
+            <cookingTime>30</cookingTime>
+            <efficiency>средняя</efficiency>
+        </poison>
+    </monster>
+    <monster>
+        <name>Билл Шифр</name>
+        <description>могущественный демон, способный войти в подсознание человека, имеет сильное сходство с Всевидящим Оком</description>
+        <danger>10</danger>
+        <habitat>измерение Кошмаров</habitat>
+        <firstMention>0001-01-01 </firstMention>
+        <height>1</height>
+        <weight>0</weight>
+        <activityTime>всегда</activityTime>
+        <immunity>магия</immunity>
+        <immunity>классическое оружие</immunity>
+        <vulnerability>квантовый дестабилизатор</vulnerability>
+        <poison>
+            <recipe>
+                <ingredient>
+                    <nameIngredient>лунный камень</nameIngredient>
+                    <quantity>5</quantity>
+                </ingredient>
+                <ingredient>
+                    <nameIngredient>волос единорога</nameIngredient>
+                    <quantity>20</quantity>
+                </ingredient>
+                <ingredient>
+                    <nameIngredient>ртуть</nameIngredient>
+                    <quantity>1</quantity>
+                </ingredient>
+            </recipe>
+            <cookingTime>100</cookingTime>
+            <efficiency>средняя</efficiency>
+        </poison>
+    </monster>
+</monsters>

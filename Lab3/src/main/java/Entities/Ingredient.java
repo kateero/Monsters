@@ -2,19 +2,21 @@ package Entities;
 
 public class Ingredient {
 
-    private String name;
+    private String nameIngredient;
     private int quantity;
+    
+    public Ingredient(){}
 
-    public String getName() {
-        return name;
+    public String getNameIngredient() {
+        return nameIngredient;
     }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameIngredient(String ingredient) {
+        this.nameIngredient = ingredient;
     }
 
     public void setQuantity(int quantity) {

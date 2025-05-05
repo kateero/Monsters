@@ -1,0 +1,243 @@
+- name: "Леший"
+  description: "Гибрид человека и лесного духа, охраняющий древние рощи"
+  danger: 7
+  habitat:
+    - "чащи Брокилона"
+    - "чащи Эдингеля"
+  firstMention: "1234-06-21"
+  height: 3
+  weight: 300
+  activityTime: "ночь"
+  immunity:
+    - "оглушение"
+    - "яды"
+  vulnerability: "магия"
+  poison:
+    recipe:
+      - nameIngredient: "корень мандрагоры"
+        quantity: 3
+      - nameIngredient: "пепел драконида"
+        quantity: 1
+      - nameIngredient: "эссенция полыни"
+        quantity: 1
+    cookingTime: 60
+    efficiency: "умеренная"
+
+- name: "Полуденница"
+  description: "призрак, терроризирующий поля во время жатвы"
+  danger: 5
+  habitat:
+    - "поля Редании"
+    - "амбары Туссента"
+  firstMention: "1198-07-15"
+  height: 2
+  weight: 0
+  activityTime: "день"
+  immunity:
+    - "кровотечение"
+  vulnerability: "световая магия"
+  poison:
+    recipe:
+      - nameIngredient: "лепестки лунного цветка"
+        quantity: 2
+      - nameIngredient: "серебряная нить"
+        quantity: 1
+      - nameIngredient: "экстракт чеснока"
+        quantity: 1
+    cookingTime: 30
+    efficiency: "высокая"
+
+- name: "Катакан"
+  description: "крылатый демон с хвостом скорпиона"
+  danger: 9
+  habitat:
+    - "горные пещеры Туссента"
+  firstMention: "1150-04-12"
+  height: 2
+  weight: 200
+  activityTime: "сумерки"
+  immunity:
+    - "огонь"
+    - "яды"
+  vulnerability: "магия"
+  poison:
+    recipe:
+      - nameIngredient: "жало мантикоры"
+        quantity: 4
+      - nameIngredient: "нефритовая пыль"
+        quantity: 2
+      - nameIngredient: "спирт Альберихта"
+        quantity: 1
+    cookingTime: 90
+    efficiency: "критическая"
+
+- name: "Кикимора"
+  description: "болотная нежить из гниющих останков"
+  danger: 6
+  habitat:
+    - "топи Вендена"
+  firstMention: "1221-09-03"
+  height: 1
+  weight: 15
+  activityTime: "ночь"
+  immunity:
+    - "удушье"
+  vulnerability: "земляная магия"
+  poison:
+    recipe:
+      - nameIngredient: "грибы-поганки"
+        quantity: 5
+      - nameIngredient: "глаз василиска"
+        quantity: 1
+      - nameIngredient: "роса папоротника"
+        quantity: 3
+    cookingTime: 45
+    efficiency: "средняя"
+
+- name: "Элементаль льда"
+  description: "дух вечной зимы"
+  danger: 10
+  habitat:
+    - "ледники Ковира"
+  firstMention: "1105-12-01"
+  height: 5
+  weight: .inf
+  activityTime: "всегда"
+  immunity:
+    - "заморозка"
+    - "дробление"
+  vulnerability: "огненная магия"
+  poison:
+    recipe:
+      - nameIngredient: "сердце огненного элементаля"
+        quantity: 1
+      - nameIngredient: "сера"
+        quantity: 3
+      - nameIngredient: "расплавленное железо"
+        quantity: 1
+    cookingTime: 120
+    efficiency: "переменная"
+
+- name: "Зомби"
+  description: "обычно они грубые, у них грубая кожа и их часто путают с подростками"
+  danger: 10
+  habitat:
+    - "кладбища города"
+    - "леса и пещеры Гравити Фолз"
+  firstMention: "1995-06-20"
+  height: 2
+  weight: 60
+  activityTime: "ночь"
+  immunity:
+    - "заморозка"
+    - "дробление"
+  vulnerability: "генерирование идеального трезвучия"
+  poison:
+    recipe:
+      - nameIngredient: "кровь саламандры"
+        quantity: 1
+      - nameIngredient: "растворитель"
+        quantity: 2
+      - nameIngredient: "формальдегид"
+        quantity: 1
+      - nameIngredient: "соль"
+        quantity: 1
+      - nameIngredient: "корица (для вкуса)"
+        quantity: 1
+    cookingTime: 10
+    efficiency: "переменная"
+
+- name: "Гремоблин"
+  description: "наполовину гремлин, наполовину гоблин"
+  danger: 8
+  habitat:
+    - "лес Гравити Фолз"
+  firstMention: "1990-10-15"
+  height: 3
+  weight: 150
+  activityTime: "день"
+  immunity:
+    - "вода"
+  vulnerability: "дать посмотреть в зеркало"
+  poison:
+    recipe:
+      - nameIngredient: "пыльца лунного цветка"
+        quantity: 1
+      - nameIngredient: "порошок кристалла из пещеры чудес"
+        quantity: 2
+      - nameIngredient: "жвачка из уха гнома"
+        quantity: 3
+    cookingTime: 10
+    efficiency: "высокая"
+
+- name: "Летоунский Ловкач"
+  description: "таинственное существо, состоящее из невкусных конфет, которые дети выкидывают на помойку во время праздника"
+  danger: 5
+  habitat:
+    - "помойки Гравити Фолз"
+  firstMention: "1990-08-10"
+  height: 3
+  weight: 40
+  activityTime: "вечер"
+  immunity:
+    - "огонь"
+    - "дробление"
+  vulnerability: "состоит из конфет, его можно съесть, если вы такие любите"
+  poison:
+    recipe:
+      - nameIngredient: "чай"
+        quantity: 10
+      - nameIngredient: "кофе"
+        quantity: 10
+      - nameIngredient: "какао"
+        quantity: 10
+    cookingTime: 15
+    efficiency: "критическая"
+
+- name: "Восковые фигуры"
+  description: "проклятые существа из воска, созданные в образах знаменитых людей"
+  danger: 7
+  habitat:
+    - "кладовка Хижины Чудес"
+  firstMention: "2000-11-05"
+  height: 2
+  weight: 20
+  activityTime: "полночь"
+  immunity:
+    - "огонь"
+    - "дробление"
+  vulnerability: "огонь, горячие предметы"
+  poison:
+    recipe:
+      - nameIngredient: "жидкий огонь"
+        quantity: 3
+      - nameIngredient: "рассветный перец"
+        quantity: 5
+      - nameIngredient: "грибы плесени"
+        quantity: 1
+    cookingTime: 30
+    efficiency: "средняя"
+
+- name: "Билл Шифр"
+  description: "могущественный демон, способный войти в подсознание человека, имеет сильное сходство с Всевидящим Оком"
+  danger: 10
+  habitat:
+    - "измерение Кошмаров"
+  firstMention: "0001-01-01"
+  height: 1
+  weight: 0
+  activityTime: "всегда"
+  immunity:
+    - "магия"
+    - "классическое оружие"
+  vulnerability: "квантовый дестабилизатор"
+  poison:
+    recipe:
+      - nameIngredient: "лунный камень"
+        quantity: 5
+      - nameIngredient: "волос единорога"
+        quantity: 20
+      - nameIngredient: "ртуть"
+        quantity: 1
+    cookingTime: 100
+    efficiency: "средняя"

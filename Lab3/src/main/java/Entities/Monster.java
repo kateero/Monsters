@@ -1,6 +1,8 @@
 package Entities;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import org.yaml.snakeyaml.nodes.ScalarNode;
 
 public class Monster {
 
@@ -8,14 +10,17 @@ public class Monster {
     private String name;
     private String description;
     private int danger;
-    private String[] habitat;
-    private LocalDate firstMention;
+    private ArrayList<String> habitat = new ArrayList<String>();
+    private String firstMention;
     private int height;
     private int weight;
     private String activityTime;
-    private String[] immunity;
+    private ArrayList<String> immunity = new ArrayList<String>();
     private String vulnerability;
     private Poison poison;
+
+    public Monster() {
+    }
 
     public String getResource() {
         return resource;
@@ -33,11 +38,15 @@ public class Monster {
         return danger;
     }
 
-    public String[] getHabitat() {
+    public ArrayList<String> getHabitat() {
         return habitat;
     }
 
-    public LocalDate getFirstMention() {
+    public ArrayList<String> getImmunity() {
+        return immunity;
+    }
+
+    public String getFirstMention() {
         return firstMention;
     }
 
@@ -51,10 +60,6 @@ public class Monster {
 
     public String getActivityTime() {
         return activityTime;
-    }
-
-    public String[] getImmunity() {
-        return immunity;
     }
 
     public Poison getPoison() {
@@ -81,11 +86,15 @@ public class Monster {
         this.danger = danger;
     }
 
-    public void setHabitat(String[] habitat) {
+    public void setHabitat(ArrayList<String> habitat) {
         this.habitat = habitat;
     }
 
-    public void setFirstMention(LocalDate firstMention) {
+    public void addHabitat(String habitat) {
+        this.habitat.add(habitat);
+    }
+
+    public void setFirstMention(String firstMention) {
         this.firstMention = firstMention;
     }
 
@@ -101,8 +110,12 @@ public class Monster {
         this.activityTime = activityTime;
     }
 
-    public void setImmunity(String[] immunity) {
+    public void setImmunity(ArrayList<String> immunity) {
         this.immunity = immunity;
+    }
+
+    public void addImmunity(String immunity) {
+        this.immunity.add(immunity);
     }
 
     public void setPoison(Poison poison) {
