@@ -2,6 +2,7 @@ package Entities;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 import org.yaml.snakeyaml.nodes.ScalarNode;
 
 public class Monster {
@@ -129,6 +130,14 @@ public class Monster {
     @Override
     public String toString(){
         return name;
+    }
+    
+    public String getStringHabitat(){
+        return habitat.stream().collect(Collectors.joining(", "));
+    }
+    
+    public String getStringImmunity(){
+        return immunity.stream().collect(Collectors.joining(", "));
     }
 
 }

@@ -1,6 +1,7 @@
 package Entities;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
  
 public class Poison {
     private ArrayList<Ingredient> recipe = new ArrayList<Ingredient>();
@@ -33,4 +34,11 @@ public class Poison {
         this.efficiency = efficiency;
     }
     
+    public String getStringRecipe(){
+        String result = "";
+        for (Ingredient ingredient : recipe) {
+            result += ingredient.toString() + "; ";
+        }
+        return result;
+    }
 }

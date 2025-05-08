@@ -2,7 +2,7 @@
 <monsters>
     <monster>
         <name>Леший</name>
-        <description>Гибрид человека и лесного духа, охраняющий древние рощи</description>
+        <description>гибрид человека и лесного духа, охраняющий древние рощи</description>
         <danger>7</danger>
         <habitat>чащи Брокилона</habitat>
         <habitat>чащи Эдингеля</habitat>
@@ -226,7 +226,7 @@
     </monster>
     <monster>
         <name>Летоунский Ловкач</name>
-        <description>таинственное существо, состоящее из невкусных конфет, которые дети выкидывают на помойку во время праздника</description>
+        <description>состоит из невкусных конфет, которые дети выкидывают на помойку</description>
         <danger>5</danger>
         <habitat>помойки Гравити Фолз</habitat>
         <firstMention>1990-08-10</firstMention>
@@ -288,7 +288,7 @@
     </monster>
     <monster>
         <name>Билл Шифр</name>
-        <description>могущественный демон, способный войти в подсознание человека, имеет сильное сходство с Всевидящим Оком</description>
+        <description>могущественный демон, имеет сильное сходство с Всевидящим Оком</description>
         <danger>10</danger>
         <habitat>измерение Кошмаров</habitat>
         <firstMention>0001-01-01 </firstMention>

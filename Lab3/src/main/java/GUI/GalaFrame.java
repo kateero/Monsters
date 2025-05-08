@@ -5,6 +5,7 @@ import Entities.Monster;
 import java.util.ArrayList;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreePath;
 
 public class GalaFrame extends javax.swing.JFrame {
 
@@ -28,6 +29,9 @@ public class GalaFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel.setBackground(new java.awt.Color(84, 11, 14));
+
+        ImportButton.setBackground(new java.awt.Color(224, 159, 62));
         ImportButton.setText("Прочитать файл");
         ImportButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -35,6 +39,7 @@ public class GalaFrame extends javax.swing.JFrame {
             }
         });
 
+        ExportButton.setBackground(new java.awt.Color(224, 159, 62));
         ExportButton.setText("Записать данные");
         ExportButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -42,6 +47,14 @@ public class GalaFrame extends javax.swing.JFrame {
             }
         });
 
+        jTreeMonsters.setBackground(new java.awt.Color(255, 243, 176));
+        jTreeMonsters.setBorder(null);
+        jTreeMonsters.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
+        jTreeMonsters.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTreeMonstersMouseClicked(evt);
+            }
+        });
         jScrollPane.setViewportView(jTreeMonsters);
 
         javax.swing.GroupLayout jPanelLayout = new javax.swing.GroupLayout(jPanel);
@@ -99,6 +112,18 @@ public class GalaFrame extends javax.swing.JFrame {
     private void ExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ExportButtonActionPerformed
+
+    private void jTreeMonstersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTreeMonstersMouseClicked
+        if (evt.getClickCount() == 2) {
+            TreePath path = jTreeMonsters.getPathForLocation(evt.getX(), evt.getY());
+            if (path != null) {
+                DefaultMutableTreeNode node = (DefaultMutableTreeNode) path.getLastPathComponent();
+                Monster monster = (Monster) node.getUserObject();
+                MonsterInfo monsterInfo = new MonsterInfo(monster);
+            }
+        }
+
+    }//GEN-LAST:event_jTreeMonstersMouseClicked
 
     public void fillJTree() {
         DefaultMutableTreeNode root = new DefaultMutableTreeNode("Монстры");
