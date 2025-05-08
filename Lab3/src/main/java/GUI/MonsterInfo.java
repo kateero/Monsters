@@ -1,11 +1,14 @@
 package GUI;
 
 import Entities.Monster;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 
 public class MonsterInfo extends javax.swing.JFrame {
+    Monster monster;
 
     public MonsterInfo(Monster monster) {
+        this.monster = monster;
         initComponents();
         setValues(monster);
         setVisible(true);
@@ -17,6 +20,7 @@ public class MonsterInfo extends javax.swing.JFrame {
     private void initComponents() {
 
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
+        jSpinner1 = new javax.swing.JSpinner();
         jPanel3 = new javax.swing.JPanel();
         nameValue = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -40,12 +44,12 @@ public class MonsterInfo extends javax.swing.JFrame {
         firstMentionValue = new javax.swing.JLabel();
         activityValue = new javax.swing.JLabel();
         immunityValue = new javax.swing.JLabel();
-        vulnerabilityValue = new javax.swing.JLabel();
         recepiValue = new javax.swing.JLabel();
         cookingValue = new javax.swing.JLabel();
         efficiencyValue = new javax.swing.JLabel();
         resourceLabel = new javax.swing.JLabel();
         resourceValue = new javax.swing.JLabel();
+        vulnerabilityValue = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
         jRadioButtonMenuItem1.setSelected(true);
@@ -144,10 +148,6 @@ public class MonsterInfo extends javax.swing.JFrame {
         immunityValue.setForeground(new java.awt.Color(51, 92, 103));
         immunityValue.setText("маги€");
 
-        vulnerabilityValue.setFont(CustomFonts.getValueFont());
-        vulnerabilityValue.setForeground(new java.awt.Color(51, 92, 103));
-        vulnerabilityValue.setText("молоко");
-
         recepiValue.setFont(CustomFonts.getValueFont());
         recepiValue.setForeground(new java.awt.Color(51, 92, 103));
         recepiValue.setText("рецепт");
@@ -168,6 +168,18 @@ public class MonsterInfo extends javax.swing.JFrame {
         resourceValue.setForeground(new java.awt.Color(51, 92, 103));
         resourceValue.setText("xml");
 
+        vulnerabilityValue.setBackground(new java.awt.Color(255, 243, 176));
+        vulnerabilityValue.setFont(CustomFonts.getValueFont());
+        vulnerabilityValue.setForeground(new java.awt.Color(51, 92, 103));
+        vulnerabilityValue.setText("маги€");
+        vulnerabilityValue.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        vulnerabilityValue.setSelectionColor(new java.awt.Color(224, 159, 62));
+        vulnerabilityValue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vulnerabilityValueActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -186,11 +198,10 @@ public class MonsterInfo extends javax.swing.JFrame {
                             .addComponent(heightLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(weightLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(firstMentionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(vulnerabilityLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(recepieLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(efficiencyLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(timeCookingLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(vulnerabilityLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(recepieLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(efficiencyLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(timeCookingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(immunityLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(activityLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(habitatLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -202,23 +213,23 @@ public class MonsterInfo extends javax.swing.JFrame {
                             .addComponent(habitatValue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(firstMentionValue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(activityValue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(immunityValue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(vulnerabilityValue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(recepiValue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cookingValue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(efficiencyValue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(descriptionValue, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(immunityValue, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(vulnerabilityValue, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(descritionLabel)
-                    .addComponent(descriptionValue))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(descriptionValue, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(descritionLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dangerLabel)
@@ -248,10 +259,10 @@ public class MonsterInfo extends javax.swing.JFrame {
                     .addComponent(immunityLabel)
                     .addComponent(immunityValue))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(vulnerabilityLabel)
-                    .addComponent(vulnerabilityValue))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(vulnerabilityValue, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(recepieLabel)
                     .addComponent(recepiValue))
@@ -271,7 +282,7 @@ public class MonsterInfo extends javax.swing.JFrame {
         );
 
         jButton1.setBackground(new java.awt.Color(224, 159, 62));
-        jButton1.setFont(new java.awt.Font("Geoform", 1, 14)); // NOI18N
+        jButton1.setFont(CustomFonts.getTitleFont());
         jButton1.setForeground(new java.awt.Color(84, 11, 14));
         jButton1.setText("»зменить у€звимость");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -284,10 +295,6 @@ public class MonsterInfo extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(408, 408, 408))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -295,7 +302,10 @@ public class MonsterInfo extends javax.swing.JFrame {
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(439, 439, 439)
-                        .addComponent(nameValue)))
+                        .addComponent(nameValue))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(311, 311, 311)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -306,8 +316,8 @@ public class MonsterInfo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -318,17 +328,20 @@ public class MonsterInfo extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        monster.setVulnerability(vulnerabilityValue.getText());
+        JOptionPane.showMessageDialog(null, "”€звимость успешно изменена", "—охранено", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void vulnerabilityValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vulnerabilityValueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vulnerabilityValueActionPerformed
 
     private void setValues(Monster monster){
         nameValue.setText(monster.getName());
@@ -369,6 +382,7 @@ public class MonsterInfo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
+    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JLabel nameValue;
     private javax.swing.JLabel recepiValue;
     private javax.swing.JLabel recepieLabel;
@@ -376,7 +390,7 @@ public class MonsterInfo extends javax.swing.JFrame {
     private javax.swing.JLabel resourceValue;
     private javax.swing.JLabel timeCookingLabel;
     private javax.swing.JLabel vulnerabilityLabel;
-    private javax.swing.JLabel vulnerabilityValue;
+    private javax.swing.JTextField vulnerabilityValue;
     private javax.swing.JLabel weightLabel;
     private javax.swing.JLabel weightValue;
     // End of variables declaration//GEN-END:variables

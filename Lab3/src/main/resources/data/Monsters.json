@@ -82,6 +82,7 @@
 	"habitat": ["ледники Ковира"],
 	"firstMention":  "1105-12-01",
 	"height": 5,
+	"weight": 1000000,
 	"activityTime": "всегда",
 	"immunity": ["заморозка", "дробление"],
 	"vulnerability": "огненная магия",

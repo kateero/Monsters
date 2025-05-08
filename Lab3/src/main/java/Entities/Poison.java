@@ -1,5 +1,6 @@
 package Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
  
@@ -34,6 +35,7 @@ public class Poison {
         this.efficiency = efficiency;
     }
     
+    @JsonIgnore
     public String getStringRecipe(){
         String result = "";
         for (Ingredient ingredient : recipe) {

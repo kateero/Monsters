@@ -10,6 +10,7 @@ public class CustomFonts {
 
     private static Font titleFont;
     private static Font valueFont;
+    private static Font treeFont;
 
     static {
         try (InputStream fontStream = CustomFonts.class.getResourceAsStream("/fonts/ofont.ru_Geoform.ttf")) {
@@ -32,6 +33,17 @@ public class CustomFonts {
             valueFont = new Font("Serif", Font.BOLD, 18);
         }
     }
+    
+    static {
+        try (InputStream fontStream = CustomFonts.class.getResourceAsStream("/fonts/ofont.ru_Zhizn.ttf")) {
+            treeFont = Font.createFont(Font.TRUETYPE_FONT, fontStream);
+            treeFont = treeFont.deriveFont(18f);
+            GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(treeFont);
+        } catch (IOException | FontFormatException e) {
+            System.err.println("Ошибка загрузки шрифта! Будет использован стандартный шрифт.");
+            treeFont = new Font("Serif", Font.BOLD, 18);
+        }
+    }
 
     public static Font getTitleFont() {
         return titleFont;
@@ -40,4 +52,9 @@ public class CustomFonts {
     public static Font getValueFont() {
         return valueFont;
     }
+
+    public static Font getTreeFont() {
+        return treeFont;
+    }
+    
 }

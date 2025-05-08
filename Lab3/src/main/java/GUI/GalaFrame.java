@@ -1,6 +1,7 @@
 package GUI;
 
 import Controller.ReadFile;
+import Controller.WriteFile;
 import Entities.Monster;
 import java.util.ArrayList;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -10,9 +11,11 @@ import javax.swing.tree.TreePath;
 public class GalaFrame extends javax.swing.JFrame {
 
     private ReadFile readFile;
+    private WriteFile writeFile;
 
-    public GalaFrame(ReadFile readFile) {
+    public GalaFrame(ReadFile readFile, WriteFile writeFile) {
         this.readFile = readFile;
+        this.writeFile = writeFile;
         initComponents();
     }
 
@@ -32,7 +35,9 @@ public class GalaFrame extends javax.swing.JFrame {
         jPanel.setBackground(new java.awt.Color(84, 11, 14));
 
         ImportButton.setBackground(new java.awt.Color(224, 159, 62));
-        ImportButton.setText("Прочитать файл");
+        ImportButton.setFont(CustomFonts.getTitleFont());
+        ImportButton.setForeground(new java.awt.Color(55, 60, 62));
+        ImportButton.setText("Прочитать");
         ImportButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImportButtonActionPerformed(evt);
@@ -40,7 +45,9 @@ public class GalaFrame extends javax.swing.JFrame {
         });
 
         ExportButton.setBackground(new java.awt.Color(224, 159, 62));
-        ExportButton.setText("Записать данные");
+        ExportButton.setFont(CustomFonts.getTitleFont());
+        ExportButton.setForeground(new java.awt.Color(55, 60, 62));
+        ExportButton.setText("Записать");
         ExportButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExportButtonActionPerformed(evt);
@@ -49,7 +56,9 @@ public class GalaFrame extends javax.swing.JFrame {
 
         jTreeMonsters.setBackground(new java.awt.Color(255, 243, 176));
         jTreeMonsters.setBorder(null);
-        jTreeMonsters.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
+        jTreeMonsters.setFont(CustomFonts.getTreeFont());
+        jTreeMonsters.setForeground(new java.awt.Color(84, 11, 14));
+        jTreeMonsters.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTreeMonsters.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTreeMonstersMouseClicked(evt);
@@ -78,8 +87,8 @@ public class GalaFrame extends javax.swing.JFrame {
                 .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ImportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ExportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ImportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ExportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32))
         );
 
@@ -110,22 +119,30 @@ public class GalaFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_ImportButtonActionPerformed
 
     private void ExportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportButtonActionPerformed
-        // TODO add your handling code here:
+        writeFile.setStorage(readFile.getStorage());
+        ChoseFile chooseFile = new ChoseFile(writeFile, this);
+        chooseFile.setLocationRelativeTo(null);
+        chooseFile.setVisible(true);
     }//GEN-LAST:event_ExportButtonActionPerformed
 
     private void jTreeMonstersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTreeMonstersMouseClicked
-        if (evt.getClickCount() == 2) {
-            TreePath path = jTreeMonsters.getPathForLocation(evt.getX(), evt.getY());
-            if (path != null) {
-                DefaultMutableTreeNode node = (DefaultMutableTreeNode) path.getLastPathComponent();
-                Monster monster = (Monster) node.getUserObject();
-                MonsterInfo monsterInfo = new MonsterInfo(monster);
+        try {
+            if (evt.getClickCount() == 2) {
+                TreePath path = jTreeMonsters.getPathForLocation(evt.getX(), evt.getY());
+                if (path != null) {
+                    DefaultMutableTreeNode node = (DefaultMutableTreeNode) path.getLastPathComponent();
+                    Monster monster = (Monster) node.getUserObject();
+                    MonsterInfo monsterInfo = new MonsterInfo(monster);
+                }
             }
+        } catch(ClassCastException ex){
+            
         }
 
     }//GEN-LAST:event_jTreeMonstersMouseClicked
 
     public void fillJTree() {
+        try {
         DefaultMutableTreeNode root = new DefaultMutableTreeNode("Монстры");
         DefaultMutableTreeNode witcherBranch = new DefaultMutableTreeNode("Ведьмак");
         DefaultMutableTreeNode gravityFallsBranch = new DefaultMutableTreeNode("Гравити Фолз");
@@ -145,6 +162,9 @@ public class GalaFrame extends javax.swing.JFrame {
 
         DefaultTreeModel model = (DefaultTreeModel) jTreeMonsters.getModel();
         model.setRoot(root);
+        } catch (NullPointerException ex){
+            
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

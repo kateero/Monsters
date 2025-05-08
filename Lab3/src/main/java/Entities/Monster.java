@@ -1,12 +1,18 @@
 package Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlTransient;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
-import org.yaml.snakeyaml.nodes.ScalarNode;
 
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Monster {
 
+    @JsonIgnore
+    @XmlTransient
     private String resource;
     private String name;
     private String description;
@@ -132,10 +138,12 @@ public class Monster {
         return name;
     }
     
+    @JsonIgnore
     public String getStringHabitat(){
         return habitat.stream().collect(Collectors.joining(", "));
     }
     
+    @JsonIgnore
     public String getStringImmunity(){
         return immunity.stream().collect(Collectors.joining(", "));
     }

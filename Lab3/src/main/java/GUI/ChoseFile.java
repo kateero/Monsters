@@ -1,6 +1,7 @@
 package GUI;
 
 import Controller.ReadFile;
+import Controller.WriteFile;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -10,9 +11,16 @@ public class ChoseFile extends javax.swing.JFrame {
 
     private ReadFile readFile;
     private GalaFrame galaFrame;
+    private WriteFile writeFile;
 
     public ChoseFile(ReadFile readFile, GalaFrame galaFrame) {
         this.readFile = readFile;
+        this.galaFrame = galaFrame;
+        initComponents();
+    }
+
+    public ChoseFile(WriteFile writeFile, GalaFrame galaFrame) {
+        this.writeFile = writeFile;
         this.galaFrame = galaFrame;
         initComponents();
     }
@@ -26,7 +34,7 @@ public class ChoseFile extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        //jFileChooser1.setCurrentDirectory(new File("src//main//resources"));
+        FileChooser.setCurrentDirectory(new File("src/main/resources/data"));
         String[] extensions = {"json", "yaml", "yml", "xml"};
         CustomFilter filter = new CustomFilter(
             extensions,
@@ -75,13 +83,21 @@ public class ChoseFile extends javax.swing.JFrame {
         try {
             File selectedFile = FileChooser.getSelectedFile();
             String filePath = selectedFile.getAbsolutePath();
-            readFile.run(filePath);
+            if (readFile != null) {
+                readFile.run(filePath);
+                galaFrame.fillJTree();
+            } else {
+                writeFile.run(filePath);
+            }
+        } catch (NullPointerException ex) {
+            
         } catch (FileNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Файл не найден", "Ошибка", JOptionPane.ERROR_MESSAGE);
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "Не удалось обработать файл", "Ошибка", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception ex){
+            JOptionPane.showMessageDialog(null, "Неверное разрешение файла", "Ошибка", JOptionPane.ERROR_MESSAGE);
         }
-        galaFrame.fillJTree();
         this.dispose();
     }//GEN-LAST:event_FileChooserActionPerformed
 

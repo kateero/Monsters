@@ -131,6 +131,7 @@
         <habitat>ледники Ковира</habitat>
         <firstMention>1105-12-01</firstMention>
         <height>5</height>
+		<weight>1000000</weight>
         <activityTime>всегда</activityTime>
         <immunity>заморозка</immunity>
         <immunity>дробление</immunity>
