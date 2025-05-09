@@ -61,7 +61,8 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FileChooserActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="FileChooser.setCurrentDirectory(new File(&quot;src/main/resources/data&quot;));&#xa;String[] extensions = {&quot;json&quot;, &quot;yaml&quot;, &quot;yml&quot;, &quot;xml&quot;};&#xa;CustomFilter filter = new CustomFilter(&#xa;            extensions,&#xa;            &quot;*.json, *.yaml, *.yml, *.xml&quot;&#xa;    );&#xa;FileChooser.addChoosableFileFilter(filter);&#xa;FileChooser.setFileFilter(filter);"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFileChooser(new File(System.getProperty(&quot;user.dir&quot;)))"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="String[] extensions = {&quot;json&quot;, &quot;yaml&quot;, &quot;yml&quot;, &quot;xml&quot;};&#xa;CustomFilter filter = new CustomFilter(&#xa;            extensions,&#xa;            &quot;*.json, *.yaml, *.yml, *.xml&quot;&#xa;    );&#xa;FileChooser.addChoosableFileFilter(filter);&#xa;FileChooser.setFileFilter(filter);"/>
           </AuxValues>
         </Component>
       </SubComponents>

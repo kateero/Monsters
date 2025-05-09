@@ -30,11 +30,10 @@ public class ChoseFile extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelChooseFile = new javax.swing.JPanel();
-        FileChooser = new javax.swing.JFileChooser();
+        FileChooser = new javax.swing.JFileChooser(new File(System.getProperty("user.dir")));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        FileChooser.setCurrentDirectory(new File("src/main/resources/data"));
         String[] extensions = {"json", "yaml", "yml", "xml"};
         CustomFilter filter = new CustomFilter(
             extensions,
