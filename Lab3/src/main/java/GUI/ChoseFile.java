@@ -34,10 +34,10 @@ public class ChoseFile extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        String[] extensions = {"json", "yaml", "yml", "xml"};
+        String[] extensions = {"json", "yml", "xml"};
         CustomFilter filter = new CustomFilter(
             extensions,
-            "*.json, *.yaml, *.yml, *.xml"
+            "*.json, *.yml, *.xml"
         );
         FileChooser.addChoosableFileFilter(filter);
         FileChooser.setFileFilter(filter);
